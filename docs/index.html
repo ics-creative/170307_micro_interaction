@@ -34,12 +34,19 @@
       justify-content: center;
       align-items: center;
     }
-    
+    .check,
+    .btn-heart,
+    .title {
+      user-select: none;
+      -ms-user-select: none;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+    } 
+
     /*
      「メニュー」と「閉じる」アイコンの変形アニメーション
     */
     #content01 {
-      background-image: -webkit-linear-gradient(135deg, #8ecbe6, #e743c3);
       background-image: linear-gradient(135deg, #8ecbe6, #e743c3);
     }
     .menu {
@@ -63,7 +70,6 @@
       display: block;
       width: 100%;
       height: 2px;
-      -webkit-transition: .15s ease-out;
       transition: .15s ease-out;
       background-color: #fff;
     }
@@ -94,7 +100,6 @@
      円形ボタンのホバーアニメーション
     */
     #content02 {
-      background-image: -webkit-linear-gradient(135deg, #ffc46e, #f043bf 100%);      
       background-image: linear-gradient(135deg, #ffc46e, #f043bf 100%);      
     }
     .btn {
@@ -113,7 +118,6 @@
       line-height: 2rem;
       -webkit-transform: scaleY(0.8);
       transform: scaleY(0.8);
-      -webkit-transition: .35s ease-in-out;
       transition: .35s ease-in-out;
     }
     .btn-back {
@@ -126,10 +130,8 @@
       position: absolute;
       width: 100%;
       height: 100%;
-      -webkit-border-radius: 50%;
       border-radius: 50%;
       background-color: #fff;
-      -webkit-transition: .15s ease-out;
       transition: .15s ease-out;
     }
     /* ハートのアニメーション */
@@ -159,16 +161,13 @@
      チェックマークのアニメーション
     */
     #content03 {
-      background-image: -webkit-linear-gradient(-135deg, #9cece3 0%, #7496ea 40%, #7393ea 60%, #4b3cf2 100%);
       background-image: linear-gradient(-135deg, #9cece3 0%, #7496ea 40%, #7393ea 60%, #4b3cf2 100%);
     }
     .circle {
       position: relative;
-      -webkit-border-radius: 50%;
       border-radius: 50%;
       width: 80px;
       height: 80px;
-      -webkit-box-shadow: inset 0 0 0 2px #fff;
       box-shadow: inset 0 0 0 2px #fff;
       -webkit-animation: filling .2s 1 ease-in .8s forwards;
       animation: filling .2s 1 ease-in .8s forwards;
@@ -253,8 +252,8 @@
      揺れるローディングアイコン
     */
     #content04 {
-      background-color: #fff;
-      border: 1px solid #ddd;
+      background-color: #eee;
+      box-shadow: inset 0 0 0 1px #ddd;
     }
     .loading {
       position: relative;
@@ -262,13 +261,11 @@
       height: 100px;
     }
     .loading::after {
-      -webkit-border-radius: 40%;
       border-radius: 40%;
       content: "";
       display: block;
       width: 100%;
       height: 100%;
-      background: -webkit-linear-gradient(to bottom, #ee88aa, rgba(250, 238, 255, 0.3) 90%, rgba(230, 238, 255, 0.5));
       background: linear-gradient(to bottom, #ee88aa, rgba(250, 238, 255, 0.3) 90%, rgba(230, 238, 255, 0.5));
       -webkit-animation: color-fade 3s infinite linear;
       animation: color-fade 3s infinite linear;
@@ -283,7 +280,6 @@
       height: 100px;
       -webkit-transform-origin: 50% 47%;
       transform-origin: 50% 47%;
-      -webkit-border-radius: 40%;
       border-radius: 40%;
       -webkit-animation: rotation 3s infinite linear;
       animation: rotation 3s infinite linear;
