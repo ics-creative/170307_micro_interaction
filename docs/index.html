@@ -91,21 +91,18 @@
     .menu:hover .menu-line {
       width: 0;
       opacity: 0;
-      -webkit-transform: translateX(20px) rotate(90deg);
       transform: translateX(20px) rotate(90deg);
     }
 
     /* 上の線のアニメーション */
     .menu:hover .menu-inner::before {
       width: 44px;
-      -webkit-transform: translateY(17px) translateX(3px) rotate(-135deg);
       transform: translateY(17px) translateX(3px) rotate(-135deg);
     }
 
     /* 下の線のアニメーション */
     .menu:hover .menu-inner::after {
       width: 44px;
-      -webkit-transform: translateY(-17px) translateX(3px) rotate(135deg);
       transform: translateY(-17px) translateX(3px) rotate(135deg);
     }
 
@@ -130,7 +127,6 @@
       position: relative;
       color: #f78198;
       font-size: 1.8rem;
-      -webkit-transform: scaleY(0.8);
       transform: scaleY(0.8);
       transition: .35s ease-in-out;
     }
@@ -141,7 +137,6 @@
       left: 0;
       width: 100%;
       height: 100%;
-      -webkit-animation: rotation 4s infinite linear;
       animation: rotation 4s infinite linear;
     }
 
@@ -158,7 +153,6 @@
     /* ハートのアニメーション */
     .btn:hover .btn-heart {
       color: #fff;
-      -webkit-transform: rotate3d(0, -1, 0, 180deg) scale(1.2, 0.9);
       transform: rotate3d(0, -1, 0, 180deg) scale(1.2, 0.9);
     }
 
@@ -166,20 +160,10 @@
     .btn:hover .btn-back-inner {
       border: 1px dashed #fff;
       background-color: rgba(255, 255, 255, 0);
-      -webkit-transform: scale(1.3);
       transform: scale(1.3);
     }
 
     /* 円の回転アニメーション */
-    @-webkit-keyframes rotation {
-      from {
-        -webkit-transform: rotate(0deg);
-      }
-      to {
-        -webkit-transform: rotate(360deg);
-      }
-    }
-
     @keyframes rotation {
       from {
         transform: rotate(0deg);
@@ -202,7 +186,6 @@
       width: 80px;
       height: 80px;
       box-shadow: inset 0 0 0 2px #fff;
-      -webkit-animation: filling .2s ease-in 1.2s forwards;
       animation: filling .2s ease-in 1.2s forwards;
     }
 
@@ -228,9 +211,7 @@
       width: 100%;
       height: 200%;
       background: #7393ea; /* 背景色に合わせて変更してください */
-      -webkit-transform-origin: 0 25%;
       transform-origin: 0 25%;
-      -webkit-animation: draw .3s linear .4s forwards;
       animation: draw .3s linear .4s forwards;
     }
 
@@ -239,9 +220,7 @@
       width: 110%;
       height: 120%;
       background: #7393ea; /* 背景色に合わせて変更してください */
-      -webkit-transform-origin: 100% 40%;
       transform-origin: 100% 40%;
-      -webkit-animation: draw .3s ease-out .7s forwards;
       animation: draw .3s ease-out .7s forwards;
     }
 
@@ -254,20 +233,10 @@
       text-align: center;
       top: 26px;
       opacity: 0;
-      -webkit-animation: check 0.2s ease-in-out 1.3s forwards;
       animation: check 0.2s ease-in-out 1.3s forwards;
     }
 
     /* 円を描くアニメーション */
-    @-webkit-keyframes draw {
-      0% {
-        -webkit-transform: rotate(0deg);
-      }
-      100% {
-        -webkit-transform: rotate(180deg);
-      }
-    }
-
     @keyframes draw {
       0% {
         transform: rotate(0deg);
@@ -288,20 +257,6 @@
     }
 
     /* チェックマークのアニメーション */
-    @-webkit-keyframes check {
-      0% {
-        -webkit-transform: scale(0.5) rotate(30deg);
-        opacity: 0;
-      }
-      90% {
-        -webkit-transform: scale(1.3) rotate(-15deg);
-        opacity: 1;
-      }
-      100% {
-        -webkit-transform: scale(1) rotate(0deg);
-        opacity: 1;
-      }
-    }
 
     @keyframes check {
       0% {
@@ -339,7 +294,6 @@
       width: 100%;
       height: 100%;
       background: linear-gradient(to bottom, #ee88aa, rgba(250, 238, 255, 0.3) 90%, rgba(230, 238, 255, 0.5));
-      -webkit-animation: color-fade 3s infinite linear;
       animation: color-fade 3s infinite linear;
     }
 
@@ -351,22 +305,18 @@
       background: #0af;
       width: 100px;
       height: 100px;
-      -webkit-transform-origin: 50% 47%;
       transform-origin: 50% 47%;
       border-radius: 40%;
-      -webkit-animation: rotation 3s infinite linear;
       animation: rotation 3s infinite linear;
     }
 
     .circle2 {
       opacity: .2;
       background: #ff0;
-      -webkit-animation: rotation 5s infinite linear;
       animation: rotation 5s infinite linear;
     }
 
     .circle3 {
-      -webkit-animation: rotation 2.5s infinite linear;
       animation: rotation 2.5s infinite linear;
     }
 
@@ -380,20 +330,10 @@
       font-size: .7rem;
       line-height: 2rem;
       letter-spacing: .15em;
-      -webkit-animation: text-fade 300ms infinite linear;
       animation: text-fade 300ms infinite linear;
     }
 
     /* 回転アニメーション */
-    @-webkit-keyframes rotation {
-      from {
-        -webkit-transform: rotate(0deg);
-      }
-      to {
-        -webkit-transform: rotate(360deg);
-      }
-    }
-
     @keyframes rotation {
       from {
         transform: rotate(0deg);
@@ -404,15 +344,6 @@
     }
 
     /* ピンク色の背景のアニメーション */
-    @-webkit-keyframes color-fade {
-      0% {
-        opacity: 1;
-      }
-      50% {
-        opacity: .7;
-      }
-    }
-
     @keyframes color-fade {
       0% {
         opacity: 1;
@@ -423,21 +354,6 @@
     }
 
     /* 点滅のアニメーション */
-    @-webkit-keyframes text-fade {
-      0% {
-        opacity: 1;
-      }
-      25% {
-        opacity: .8;
-      }
-      50% {
-        opacity: .9;
-      }
-      75% {
-        opacity: .6;
-      }
-    }
-
     @keyframes text-fade {
       0% {
         opacity: 1;
