@@ -2,19 +2,21 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-  
+
   <title>micro interaction</title>
   <style>
     * {
       margin: 0;
       padding: 0;
     }
+
     body {
-      font-size:62.5%;
+      font-size: 62.5%;
     }
+
     body {
       margin: 0;
-      font-family: 'Open Sans','Hiragino Sans','ヒラギノ角ゴシック','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','Helvetica Neue',Helvetica,Arial,sans-serif;
+      font-family: 'Open Sans', 'Hiragino Sans', 'ヒラギノ角ゴシック', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', 'Helvetica Neue', Helvetica, Arial, sans-serif;
       font-size: 1.3rem;
       font-weight: 400;
       font-style: normal;
@@ -24,9 +26,11 @@
       text-size-adjust: 100%;
       -webkit-font-smoothing: subpixel-antialiased;
     }
+
     .invisible {
       display: none !important;
     }
+
     .container {
       width: 100%;
       height: 405px;
@@ -34,6 +38,7 @@
       justify-content: center;
       align-items: center;
     }
+
     .check,
     .btn-heart,
     .title {
@@ -41,7 +46,7 @@
       -ms-user-select: none;
       -moz-user-select: none;
       -webkit-user-select: none;
-    } 
+    }
 
     /*
      「メニュー」と「閉じる」アイコンの変形アニメーション
@@ -49,6 +54,7 @@
     #content01 {
       background-image: linear-gradient(135deg, #8ecbe6, #e743c3);
     }
+
     .menu {
       position: relative;
       display: inline-block;
@@ -56,13 +62,16 @@
       height: 50px;
       cursor: pointer;
     }
+
     .menu-line {
       top: 17px;
     }
+
     .menu-inner::after,
     .menu-inner::before {
       content: "";
     }
+
     .menu-line,
     .menu-inner::after,
     .menu-inner::before {
@@ -73,9 +82,11 @@
       transition: .15s ease-out;
       background-color: #fff;
     }
+
     .menu-inner::after {
       top: 34px;
     }
+
     /* 真ん中の線のアニメーション */
     .menu:hover .menu-line {
       width: 0;
@@ -83,25 +94,28 @@
       -webkit-transform: translateX(20px) rotate(90deg);
       transform: translateX(20px) rotate(90deg);
     }
+
     /* 上の線のアニメーション */
     .menu:hover .menu-inner::before {
       width: 44px;
       -webkit-transform: translateY(17px) translateX(3px) rotate(-135deg);
       transform: translateY(17px) translateX(3px) rotate(-135deg);
     }
+
     /* 下の線のアニメーション */
     .menu:hover .menu-inner::after {
       width: 44px;
       -webkit-transform: translateY(-17px) translateX(3px) rotate(135deg);
       transform: translateY(-17px) translateX(3px) rotate(135deg);
     }
-    
+
     /*
      円形ボタンのホバーアニメーション
     */
     #content02 {
-      background-image: linear-gradient(135deg, #ffc46e, #f043bf 100%);      
+      background-image: linear-gradient(135deg, #ffc46e, #f043bf 100%);
     }
+
     .btn {
       position: relative;
       display: inline-flex;
@@ -111,6 +125,7 @@
       align-items: center;
       justify-content: center;
     }
+
     .btn-heart {
       position: relative;
       color: #f78198;
@@ -119,6 +134,7 @@
       transform: scaleY(0.8);
       transition: .35s ease-in-out;
     }
+
     .btn-back {
       position: absolute;
       width: 100%;
@@ -126,6 +142,7 @@
       -webkit-animation: rotation 4s infinite linear;
       animation: rotation 4s infinite linear;
     }
+
     .btn-back-inner {
       position: absolute;
       border: 0 solid #fff;
@@ -135,12 +152,14 @@
       background-color: #fff;
       transition: .15s ease-out;
     }
+
     /* ハートのアニメーション */
     .btn:hover .btn-heart {
       color: #fff;
       -webkit-transform: rotate3d(0, -1, 0, 180deg) scale(1.2, 0.9);
       transform: rotate3d(0, -1, 0, 180deg) scale(1.2, 0.9);
     }
+
     /* 背景のアニメーション */
     .btn:hover .btn-back-inner {
       border: 1px dashed #fff;
@@ -148,22 +167,33 @@
       -webkit-transform: scale(1.3);
       transform: scale(1.3);
     }
+
     /* 円の回転アニメーション */
     @-webkit-keyframes rotation {
-      from { -webkit-transform: rotate(0deg); }
-      to { -webkit-transform: rotate(360deg); }
+      from {
+        -webkit-transform: rotate(0deg);
+      }
+      to {
+        -webkit-transform: rotate(360deg);
+      }
     }
+
     @keyframes rotation {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
     }
-    
+
     /*
      チェックマークのアニメーション
     */
     #content03 {
       background-image: linear-gradient(-135deg, #9cece3 0%, #7496ea 40%, #7393ea 60%, #4b3cf2 100%);
     }
+
     .circle {
       position: relative;
       border-radius: 50%;
@@ -173,6 +203,7 @@
       -webkit-animation: filling .2s 1 ease-in 1.2s forwards;
       animation: filling .2s 1 ease-in 1.2s forwards;
     }
+
     .cover1,
     .cover2 {
       position: absolute;
@@ -180,14 +211,17 @@
       width: 50%;
       height: 100%;
     }
+
     .cover1 {
       left: 50%;
     }
+
     .cover1:before,
     .cover2:before {
       position: absolute;
       content: "";
     }
+
     .cover1:before {
       width: 100%;
       height: 200%;
@@ -197,6 +231,7 @@
       -webkit-animation: draw .3s 1 linear .4s forwards;
       animation: draw .3s 1 linear .4s forwards;
     }
+
     .cover2:before {
       left: -10%;
       width: 110%;
@@ -207,6 +242,7 @@
       -webkit-animation: draw .3s 1 ease-out .7s forwards;
       animation: draw .3s 1 ease-out .7s forwards;
     }
+
     .check {
       position: absolute;
       color: #7393ea;
@@ -219,36 +255,76 @@
       -webkit-animation: check .2s 1 ease-in-out 1.3s forwards;
       animation: check .2s 1 ease-in-out 1.3s forwards;
     }
+
     /* 円を描くアニメーション */
     @-webkit-keyframes draw {
-      0% { -webkit-transform: rotate(0deg); }
-      100% { -webkit-transform: rotate(180deg); }
+      0% {
+        -webkit-transform: rotate(0deg);
+      }
+      100% {
+        -webkit-transform: rotate(180deg);
+      }
     }
+
     @keyframes draw {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(180deg); }
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(180deg);
+      }
     }
+
     /* 塗りのアニメーション */
     @-webkit-keyframes filling {
-      0% { -webkit-box-shadow: inset 0 0 0 9px #fff; }
-      100% { -webkit-box-shadow: inset 0 0 0 50px #fff; }
+      0% {
+        -webkit-box-shadow: inset 0 0 0 9px #fff;
+      }
+      100% {
+        -webkit-box-shadow: inset 0 0 0 50px #fff;
+      }
     }
+
     @keyframes filling {
-      0% { box-shadow: inset 0 0 0 9px #fff; }
-      100% { box-shadow: inset 0 0 0 50px #fff; }
+      0% {
+        box-shadow: inset 0 0 0 9px #fff;
+      }
+      100% {
+        box-shadow: inset 0 0 0 50px #fff;
+      }
     }
+
     /* チェックマークのアニメーション */
     @-webkit-keyframes check {
-      0% { -webkit-transform: scale(0.5) rotate(30deg); opacity: 0; }
-      90% { -webkit-transform: scale(1.3) rotate(-15deg); opacity: 1; }
-      100% { -webkit-transform: scale(1) rotate(0deg); opacity: 1; }
+      0% {
+        -webkit-transform: scale(0.5) rotate(30deg);
+        opacity: 0;
+      }
+      90% {
+        -webkit-transform: scale(1.3) rotate(-15deg);
+        opacity: 1;
+      }
+      100% {
+        -webkit-transform: scale(1) rotate(0deg);
+        opacity: 1;
+      }
     }
+
     @keyframes check {
-      0% { transform: scale(0.5) rotate(30deg); opacity: 0; }
-      90% { transform: scale(1.3) rotate(-15deg); opacity: 1; }
-      100% { transform: scale(1) rotate(0deg); opacity: 1; }
+      0% {
+        transform: scale(0.5) rotate(30deg);
+        opacity: 0;
+      }
+      90% {
+        transform: scale(1.3) rotate(-15deg);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+      }
     }
-    
+
     /*
      揺れるローディングアイコン
     */
@@ -256,11 +332,13 @@
       background-color: #f9f9f9;
       box-shadow: inset 0 0 0 1px #ddd;
     }
+
     .loading {
       position: relative;
       width: 100px;
       height: 100px;
     }
+
     .loading::after {
       border-radius: 40%;
       content: "";
@@ -271,6 +349,7 @@
       -webkit-animation: color-fade 3s infinite linear;
       animation: color-fade 3s infinite linear;
     }
+
     .circle1,
     .circle2,
     .circle3 {
@@ -285,16 +364,19 @@
       -webkit-animation: rotation 3s infinite linear;
       animation: rotation 3s infinite linear;
     }
+
     .circle2 {
       opacity: .2;
       background: #ff0;
       -webkit-animation: rotation 5s infinite linear;
       animation: rotation 5s infinite linear;
     }
+
     .circle3 {
       -webkit-animation: rotation 2.5s infinite linear;
       animation: rotation 2.5s infinite linear;
     }
+
     .title {
       position: absolute;
       top: 33px;
@@ -308,91 +390,129 @@
       -webkit-animation: text-fade 300ms infinite linear;
       animation: text-fade 300ms infinite linear;
     }
+
     /* 回転アニメーション */
     @-webkit-keyframes rotation {
-      from { -webkit-transform: rotate(0deg); }
-      to { -webkit-transform: rotate(360deg); }
+      from {
+        -webkit-transform: rotate(0deg);
+      }
+      to {
+        -webkit-transform: rotate(360deg);
+      }
     }
+
     @keyframes rotation {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
     }
+
     /* ピンク色の背景のアニメーション */
     @-webkit-keyframes color-fade {
-      0% { opacity: 1; }
-      50% { opacity: .7; }
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: .7;
+      }
     }
+
     @keyframes color-fade {
-      0% { opacity: 1; }
-      50% { opacity: .7; }
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: .7;
+      }
     }
+
     /* 点滅のアニメーション */
     @-webkit-keyframes text-fade {
-      0% { opacity: 1; }
-      25% { opacity: .8; }
-      50% { opacity: .9; }
-      75% { opacity: .6; }
+      0% {
+        opacity: 1;
+      }
+      25% {
+        opacity: .8;
+      }
+      50% {
+        opacity: .9;
+      }
+      75% {
+        opacity: .6;
+      }
     }
+
     @keyframes text-fade {
-      0% { opacity: 1; }
-      25% { opacity: .8; }
-      50% { opacity: .9; }
-      75% { opacity: .6; }
+      0% {
+        opacity: 1;
+      }
+      25% {
+        opacity: .8;
+      }
+      50% {
+        opacity: .9;
+      }
+      75% {
+        opacity: .6;
+      }
     }
   </style>
 </head>
 <body>
-    <section id="content01" class="container invisible">
-      <div class="menu">
-        <span class="menu-line"></span>
-        <span class="menu-inner"></span>
-      </div>
-    </section>
-    
-    <section id="content02" class="container invisible">
-      <div class="btn">
-        <div class="btn-back">
-          <span class="btn-back-inner"></span>
-        </div>
-        <span class="btn-heart">&hearts;</span>
-      </div>
-    </section>
-    
-    <section id="content03" class="container invisible">
-      <div class="circle">
-        <span class="cover1"></span>
-        <span class="cover2"></span>
-        <span class="check">&check;</span>
-      </div>
-    </section>
-    
-    <section id="content04" class="container invisible">
-      <div class="loading">
-        <span class="title">LOADING</span>
-        <span class="circle1"></span>
-        <span class="circle2"></span>
-        <span class="circle3"></span>
-      </div>
-    </section>
-    
+<section id="content01" class="container invisible">
+  <div class="menu">
+    <span class="menu-line"></span>
+    <span class="menu-inner"></span>
   </div>
-  <script>
-    // ハッシュで表示を切り替える
-    var section;
-    var hash = location.hash;
-    
-    if (hash.length) {
-      section = document.getElementById(hash.substr(1, hash.length));
+</section>
+
+<section id="content02" class="container invisible">
+  <div class="btn">
+    <div class="btn-back">
+      <span class="btn-back-inner"></span>
+    </div>
+    <span class="btn-heart">&hearts;</span>
+  </div>
+</section>
+
+<section id="content03" class="container invisible">
+  <div class="circle">
+    <span class="cover1"></span>
+    <span class="cover2"></span>
+    <span class="check">&check;</span>
+  </div>
+</section>
+
+<section id="content04" class="container invisible">
+  <div class="loading">
+    <span class="title">LOADING</span>
+    <span class="circle1"></span>
+    <span class="circle2"></span>
+    <span class="circle3"></span>
+  </div>
+</section>
+
+</div>
+<script>
+  // ハッシュで表示を切り替える
+  var section;
+  var hash = location.hash;
+
+  if (hash.length) {
+    section = document.getElementById(hash.substr(1, hash.length));
+    section.classList.remove("invisible");
+    section.style.height = "100%";
+  }
+  else {
+    var sections = document.getElementsByTagName("section");
+    console.log(sections)
+    for (section of sections) {
       section.classList.remove("invisible");
-      section.style.height = "100%";
     }
-    else {
-      var sections = document.getElementsByTagName("section");
-      console.log(sections)
-      for (section of sections) {
-        section.classList.remove("invisible");
-      }
-    }
-  </script>
+  }
+</script>
 </body>
 </html>
