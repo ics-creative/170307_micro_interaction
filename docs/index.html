@@ -88,20 +88,23 @@
     }
 
     /* 真ん中の線のアニメーション */
-    .menu:hover .menu-line {
+    .menu:hover .menu-line,
+    .menu:active .menu-line {
       width: 0;
       opacity: 0;
       transform: translateX(20px) rotate(90deg);
     }
 
     /* 上の線のアニメーション */
-    .menu:hover .menu-inner::before {
+    .menu:hover .menu-inner::before,
+    .menu:active .menu-inner::before {
       width: 44px;
       transform: translateY(17px) translateX(3px) rotate(-135deg);
     }
 
     /* 下の線のアニメーション */
-    .menu:hover .menu-inner::after {
+    .menu:hover .menu-inner::after,
+    .menu:active .menu-inner::after {
       width: 44px;
       transform: translateY(-17px) translateX(3px) rotate(135deg);
     }
@@ -151,13 +154,15 @@
     }
 
     /* ハートのアニメーション */
-    .btn:hover .btn-heart {
+    .btn:hover .btn-heart,
+    .btn:active .btn-heart {
       color: #fff;
       transform: rotate3d(0, -1, 0, 180deg) scale(1.2, 0.9);
     }
 
     /* 背景のアニメーション */
-    .btn:hover .btn-back-inner {
+    .btn:hover .btn-back-inner,
+    .btn:active .btn-back-inner {
       border: 1px dashed #fff;
       background-color: rgba(255, 255, 255, 0);
       transform: scale(1.3);
@@ -417,7 +422,7 @@
   }
   else {
     var sections = document.getElementsByTagName("section");
-    for (var i=0; i<sections.length; i++) {
+    for (var i = 0; i < sections.length; i++) {
       sections[i].classList.remove("invisible");
     }
   }
