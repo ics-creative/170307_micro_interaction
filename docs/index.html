@@ -510,9 +510,8 @@
   }
   else {
     var sections = document.getElementsByTagName("section");
-    console.log(sections)
-    for (section of sections) {
-      section.classList.remove("invisible");
+    for (var i=0; i<sections.length; i++) {
+      sections[i].classList.remove("invisible");
     }
   }
 </script>
