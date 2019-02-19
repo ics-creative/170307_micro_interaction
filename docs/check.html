@@ -45,6 +45,8 @@
         width: 80px;
         height: 80px;
         box-shadow: inset 0 0 0 2px #fff;
+      }
+      .circle.animation {
         animation: filling 0.2s ease-in 1.2s forwards;
       }
 
@@ -71,6 +73,9 @@
         height: 200%;
         background: #7393ea; /* 背景色に合わせて変更してください */
         transform-origin: 0 25%;
+      }
+
+      .circle.animation .cover1:before {
         animation: draw 0.3s linear 0.4s forwards;
       }
 
@@ -80,6 +85,8 @@
         height: 120%;
         background: #7393ea; /* 背景色に合わせて変更してください */
         transform-origin: 100% 40%;
+      }
+      .circle.animation .cover2:before {
         animation: draw 0.3s ease-out 0.7s forwards;
       }
 
@@ -92,6 +99,10 @@
         text-align: center;
         top: 26px;
         opacity: 0;
+
+        user-select: none;
+      }
+      .circle.animation .check {
         animation: check 0.2s ease-in-out 1.3s forwards;
       }
 
@@ -134,12 +145,22 @@
     </style>
   </head>
   <body>
-    <section id="content03" class="container invisible">
-      <div class="circle">
+    <section id="content03" class="container">
+      <div class="circle animation">
         <span class="cover1"></span>
         <span class="cover2"></span>
         <span class="check">&#x02713;</span>
       </div>
     </section>
+    <script>
+      // 時間経過でアニメーションをリピートさせる
+      setInterval(function() {
+        var el = document.querySelector(".circle");
+        el.classList.remove("animation");
+        setTimeout(function() {
+          el.classList.add("animation");
+        }, 16);
+      }, 3000);
+    </script>
   </body>
 </html>
