@@ -21,79 +21,94 @@
       .container {
         width: 100%;
         height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        display: grid;
+        place-items: center;
       }
 
-      /*
-     「メニュー」と「閉じる」アイコンの変形アニメーション
-    */
+      /* 「メニュー」と「閉じる」アイコンの変形アニメーション */
       #content01 {
         background-image: linear-gradient(135deg, #8ecbe6, #e743c3);
       }
 
-      .menu {
-        position: relative;
-        display: inline-block;
-        width: 50px;
-        height: 50px;
-        cursor: pointer;
-      }
-
-      .menu-line {
-        top: 17px;
-      }
-
-      .menu-inner::after,
-      .menu-inner::before {
-        content: "";
-      }
-
-      .menu-line,
-      .menu-inner::after,
-      .menu-inner::before {
-        position: absolute;
+      /* 3本の線 */
+      .hm-line-top,
+      .hm-line-middle,
+      .hm-line-bottom {
+        --height: 2px;
         display: block;
         width: 100%;
-        height: 2px;
-        transition: 0.15s ease-out;
+        height: var(--height);
+        transition: 0.3s;
+        transform-origin: center;
         background-color: #fff;
+        /* 縦真ん中に配置 */
+        position: absolute;
+        top: calc(50% - var(--height) / 2);
+        left: 0;
+      }
+      /* 上の線の初期位置 */
+      .hm-line-top {
+        translate: 0 14px;
+      }
+      /* 下の線の初期位置 */
+      .hm-line-bottom {
+        translate: 0 -14px;
       }
 
-      .menu-inner::after {
-        top: 34px;
-      }
+      /* ハンバーガーメニューのボタン。hm = Hamburger Menu */
+      .hm-button {
+        position: relative;
+        display: inline-flex;
+        width: 48px;
+        height: 48px;
+        appearance: none;
+        background: none;
+        border: none;
+        cursor: pointer;
 
-      /* 真ん中の線のアニメーション */
-      .menu:hover .menu-line,
-      .menu:active .menu-line {
-        width: 0;
-        opacity: 0;
-        transform: translateX(20px) rotate(90deg);
-      }
+        /* 選択状態 */
+        &.active {
+          /* 真ん中の線のアニメーション */
+          .hm-line-middle {
+            width: 0;
+            opacity: 0;
+            transform: translateX(20px) rotate(90deg);
+          }
 
-      /* 上の線のアニメーション */
-      .menu:hover .menu-inner::before,
-      .menu:active .menu-inner::before {
-        width: 44px;
-        transform: translateY(17px) translateX(3px) rotate(-135deg);
-      }
+          /* 上の線のアニメーション */
+          .hm-line-top {
+            translate: 0 0;
+            rotate: 135deg;
+          }
 
-      /* 下の線のアニメーション */
-      .menu:hover .menu-inner::after,
-      .menu:active .menu-inner::after {
-        width: 44px;
-        transform: translateY(-17px) translateX(3px) rotate(135deg);
+          /* 下の線のアニメーション */
+          .hm-line-bottom {
+            translate: 0 0;
+            rotate: -135deg;
+          }
+        }
       }
     </style>
   </head>
   <body>
     <section id="content01" class="container">
-      <div class="menu">
-        <span class="menu-line"></span>
-        <span class="menu-inner"></span>
-      </div>
+      <button class="hm-button" aria-label="ひらく">
+        <span class="hm-line-top"></span>
+        <span class="hm-line-middle"></span>
+        <span class="hm-line-bottom"></span>
+      </button>
     </section>
+
+    <script>
+      // ボタンの開閉処理
+      const button = document.querySelector(".hm-button");
+
+      button.addEventListener("click", () => {
+        const current = button.classList.contains("active");
+        const next = !current;
+        button.classList.toggle("active", next);
+        button.setAttribute("aria-label", next ? "とじる" : "ひらく");
+      });
+    </script>
   </body>
 </html>
