@@ -3,33 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Micro Interaction - ICS MEDIA</title>
+    <title>Loading Animation - ICS MEDIA</title>
+    <!-- 共通スタイルシートの読み込み -->
+    <link rel="stylesheet" href="styles/common.css" />
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-      }
-
-      html,
-      body {
-        height: 100%;
-      }
-      body {
-        font-family: sans-serif;
-      }
-
-      /* 揺れるローディングのグラフィック */
-      #content04 {
+      .container-bg-loading {
         background-color: #f9f9f9;
         box-shadow: inset 0 0 0 1px #ddd;
       }
 
-      .container {
-        width: 100%;
-        height: 100%;
-        display: grid;
-        place-items: center;
-      }
+      /* ==============================
+      揺れるローディングのグラフィック
+      */
 
       .loading {
         position: relative;
@@ -50,33 +35,33 @@
           rgba(250, 238, 255, 0.3) 90%,
           rgba(230, 238, 255, 0.5)
         );
-        animation: color-fade 3s infinite linear;
+        animation: loading-circle-opacity 3s infinite linear;
       }
 
-      .circle1,
-      .circle2,
-      .circle3 {
+      .loading-circle-1,
+      .loading-circle-2,
+      .loading-circle-3 {
         opacity: 0.4;
         position: absolute;
-        background: #0af;
+        background: #0af; /* 水色 */
         width: 100px;
         height: 100px;
-        transform-origin: 50% 47%;
+        transform-origin: 50% 47%; /* ちょいずらす */
         border-radius: 40%;
-        animation: rotation 3s infinite linear;
+        animation: loading-circle-rotation 3s infinite linear;
       }
 
-      .circle2 {
+      .loading-circle-2 {
         opacity: 0.2;
-        background: #ff0;
-        animation: rotation 5s infinite linear;
+        background: #ff0; /* 黄色 */
+        animation: loading-circle-rotation 5s infinite linear;
       }
 
-      .circle3 {
-        animation: rotation 2.5s infinite linear;
+      .loading-circle-3 {
+        animation: loading-circle-rotation 2.5s infinite linear;
       }
 
-      .title {
+      .loading-label {
         position: absolute;
         top: 33px;
         width: 100%;
@@ -86,21 +71,21 @@
         font-size: 0.7rem;
         line-height: 2rem;
         letter-spacing: 0.15em;
-        animation: text-fade 300ms infinite linear;
+        animation: loading-label-opacity 300ms infinite linear;
       }
 
       /* 回転アニメーション */
-      @keyframes rotation {
+      @keyframes loading-circle-rotation {
         from {
-          transform: rotate(0deg);
+          rotate: 0deg;
         }
         to {
-          transform: rotate(360deg);
+          rotate: 360deg;
         }
       }
 
       /* ピンク色の背景のアニメーション */
-      @keyframes color-fade {
+      @keyframes loading-circle-opacity {
         0% {
           opacity: 1;
         }
@@ -110,7 +95,7 @@
       }
 
       /* 点滅のアニメーション */
-      @keyframes text-fade {
+      @keyframes loading-label-opacity {
         0% {
           opacity: 1;
         }
@@ -127,13 +112,13 @@
     </style>
   </head>
   <body>
-    <section id="content04" class="container invisible">
+    <div class="container container-bg-loading">
       <div class="loading">
-        <span class="title">LOADING</span>
-        <span class="circle1"></span>
-        <span class="circle2"></span>
-        <span class="circle3"></span>
+        <span class="loading-label">LOADING</span>
+        <span class="loading-circle-1"></span>
+        <span class="loading-circle-2"></span>
+        <span class="loading-circle-3"></span>
       </div>
-    </section>
+    </div>
   </body>
 </html>

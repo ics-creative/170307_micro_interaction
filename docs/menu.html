@@ -2,33 +2,19 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, user-scalable=no"
-    />
-    <title>Micro Interaction - ICS MEDIA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hamburger Menu Interaction - ICS MEDIA</title>
+    <!-- 共通スタイルシートの読み込み -->
+    <link rel="stylesheet" href="styles/common.css" />
+
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-      }
-
-      html,
-      body {
-        height: 100%;
-      }
-
-      .container {
-        width: 100%;
-        height: 100%;
-        display: grid;
-        place-items: center;
-      }
-
-      /* 「メニュー」と「閉じる」アイコンの変形アニメーション */
-      #content01 {
+      .container-bg {
         background-image: linear-gradient(135deg, #8ecbe6, #e743c3);
       }
+
+      /* ==========================================
+      「メニュー」と「閉じる」アイコンの変形アニメーション
+      */
 
       /* 3本の線 */
       .hm-line-top,
@@ -70,9 +56,8 @@
         &.active {
           /* 真ん中の線のアニメーション */
           .hm-line-middle {
-            width: 0;
             opacity: 0;
-            transform: translateX(20px) rotate(90deg);
+            rotate: 90deg;
           }
 
           /* 上の線のアニメーション */
@@ -91,13 +76,13 @@
     </style>
   </head>
   <body>
-    <section id="content01" class="container">
+    <div class="container container-bg">
       <button class="hm-button" aria-label="ひらく">
         <span class="hm-line-top"></span>
         <span class="hm-line-middle"></span>
         <span class="hm-line-bottom"></span>
       </button>
-    </section>
+    </div>
 
     <script>
       // ボタンの開閉処理
@@ -105,7 +90,7 @@
 
       button.addEventListener("click", () => {
         const current = button.classList.contains("active");
-        const next = !current;
+        const next = !current; // 次の状態は反転
         button.classList.toggle("active", next);
         button.setAttribute("aria-label", next ? "とじる" : "ひらく");
       });
