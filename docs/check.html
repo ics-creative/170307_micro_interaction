@@ -32,7 +32,7 @@
         --circle-bg-color: #7393ea; /* 背景色に合わせて変更してください */
 
         &.animation {
-          animation: circle-filling-animation 0.2s linear 1.2s forwards;
+          animation: circle-filling-animation 0.3s ease 1.2s forwards;
 
           .circle-cover-1::before {
             animation: circle-draw-animation 0.4s var(--ease-in-expo) 0.4s
@@ -166,7 +166,7 @@
         setTimeout(() => {
           el.classList.add("animation");
         }, 16);
-      }, 3000);
+      }, 4000);
     </script>
   </body>
 </html>
