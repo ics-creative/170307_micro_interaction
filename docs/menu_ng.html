@@ -9,7 +9,8 @@
 
     <style>
       .container-bg {
-        background-image: linear-gradient(135deg, #8ecbe6, #e743c3);
+        /*background-image: linear-gradient(135deg, #8ecbe6, #e743c3);*/
+        background: black;
       }
 
       /* ==========================================
@@ -25,26 +26,14 @@
         width: 100%;
         height: var(--height);
         transition: 0.3s;
-        transform-origin: center;
         background-color: #fff;
-        /* 縦真ん中に配置 */
-        position: absolute;
-        top: calc(50% - var(--height) / 2);
-        left: 0;
-      }
-      /* 上の線の初期位置 */
-      .hm-line-top {
-        translate: 0 14px;
-      }
-      /* 下の線の初期位置 */
-      .hm-line-bottom {
-        translate: 0 -14px;
       }
 
       /* ハンバーガーメニューのボタン。hm = Hamburger Menu */
       .hm-button {
-        position: relative;
-        display: inline-flex;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
         width: 48px;
         height: 48px;
         appearance: none;
@@ -62,14 +51,14 @@
 
           /* 上の線のアニメーション */
           .hm-line-top {
-            translate: 0 0;
-            rotate: -135deg;
+            translate: 0 14px; /* 🌟わざと誤った値を指定しています */
+            rotate: 135deg;
           }
 
           /* 下の線のアニメーション */
           .hm-line-bottom {
-            translate: 0 0;
-            rotate: 135deg;
+            translate: 0 -14px;/* 🌟わざと誤った値を指定しています */
+            rotate: -135deg;
           }
         }
       }
